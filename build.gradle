@@ -1,0 +1,32 @@
+plugins {
+    id 'java'
+    id 'eclipse'
+    id 'org.springframework.boot' version '2.6.7'
+    id 'org.jetbrains.kotlin.jvm' version '1.6.20'
+}
+
+group = 'org.kotlin'
+version = '1.0-SNAPSHOT'
+sourceCompatibility = 17
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'org.jetbrains.kotlin:kotlin-test'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+compileKotlin {
+    kotlinOptions.jvmTarget = '17'
+}
+
+compileTestKotlin {
+    kotlinOptions.jvmTarget = '17'
+}
